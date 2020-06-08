@@ -38,6 +38,17 @@ class LinkedList:
             # set the list's tail reference to the new node
             self.tail = new_node
 
+    def add_to_head(self, value):
+        new_node = Node(value, None)
+
+        if not self.head:
+            self.head = new_node
+            self.tail = new_node
+
+        else:
+            new_node.set_next(self.head)
+            self.head = new_node
+
     def remove_head(self):
         # return None if there is no head (i.e. the list is empty)
         if not self.head:
